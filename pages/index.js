@@ -29,7 +29,7 @@ export async function getStaticProps() {
   const allPostsData = getPostsData();  //id, title, date, thumbnail
   //const allPostsData = '';
   console.log("##allPostsData##");
-  console.log(allPostsData);
+  //console.log(allPostsData);
   const fsValue = fs;
   //  console.log(fsValue);
   
@@ -39,7 +39,6 @@ export async function getStaticProps() {
     },
   };
 }
-
 
 //SSRの場合
 //export async function getServerSideProps(context) {
@@ -62,11 +61,11 @@ export default function Home({ allPostsData }) {
 
       <section className={`${utilStyle.headingMd} ${utilStyle.padding1px}`}>
         <h2>📝エンジニアのブログ</h2>
-        <div className={styles.grid}>
+        <div className={styles.grid} >
           {allPostsData.map(({id, title, date, thumbnail}) => (
-          <article key={id}>
+          <article key={id} >
             <Link href={`/posts/${id}`}>
-            <Image src={`${thumbnail}`} 
+            <img src={`${thumbnail}`} 
             className={styles.thumbnailImage}  
             />
             </Link>
