@@ -30,7 +30,8 @@ export async function getStaticProps() {
   //const allPostsData = '';
   console.log("##allPostsData##");
   console.log(allPostsData);
-  console.log(fs);
+  const fsValue = fs;
+  //  console.log(fsValue);
   
   return {
     props: {
